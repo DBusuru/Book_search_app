@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+// App.tsx
+import React, { useState } from 'react';
+import SearchBar from './components/SearchBar';
+import BookList from './components/BookList';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [searchTerm, setSearchTerm] = useState('');
 
-export default App;
+  return (
+    <>
+    <div className="container">
+      <h1 className="my-4 text-center">📚 Book Search App</h1>
+      <SearchBar onSearch={setSearchTerm} />
+
+      <div className="img-container">
+
+      <p className='d-flex flex-wrap'><BookList searchTerm={searchTerm} /></p>
+      </div>
+    </div>
+            
+          </>
+        );
+      }
+      
+      export default App;
+  
