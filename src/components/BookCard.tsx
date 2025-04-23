@@ -1,5 +1,8 @@
 // components/BookCard.tsx
 import React from 'react';
+import './BookCard.css';
+
+
 
 interface BookProps {
   title: string;
